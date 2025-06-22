@@ -1,1 +1,8 @@
-<p>user-form works!</p>
+<div class="user-form-container">
+  <mat-form-field>
+    <mat-label>Input</mat-label>
+    <input matInput [(ngModel)]="userName" />
+  </mat-form-field>
+
+  <h1>{{userName}}</h1>
+</div>
