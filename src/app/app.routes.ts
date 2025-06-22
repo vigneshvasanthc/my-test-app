@@ -7,7 +7,8 @@ import { Login } from './login/login';
 import { PageNotFound } from './page-not-found/page-not-found';
 
 export const routes: Routes = [
-  { path: 'home', redirectTo: '', component: Home },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: Home },
   { path: 'top-nav-bar', component: TopNavBar },
   { path: 'user-form', component: UserForm },
   { path: 'to-do-list', component: ToDoList },

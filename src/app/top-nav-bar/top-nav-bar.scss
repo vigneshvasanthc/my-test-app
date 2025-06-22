@@ -1,0 +1,12 @@
+.top-nav-bar-container {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+  text-align: right;
+  display: block;
+}
+
+.router-link-active {
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.04); // or any highlight style
+  color: #1976d2; // optional: change color to match theme
+}
