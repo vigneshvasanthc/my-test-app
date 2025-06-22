@@ -1,3 +1,7 @@
-<app-top-nav-bar></app-top-nav-bar>
+@if(!isLoginPage) {
+<ng-container>
+  <app-top-nav-bar></app-top-nav-bar>
+</ng-container>
+}
 
 <router-outlet />

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { TopNavBar } from './top-nav-bar/top-nav-bar';
 
 @Component({
@@ -10,4 +10,8 @@ import { TopNavBar } from './top-nav-bar/top-nav-bar';
 })
 export class App {
   protected title = 'my-test-app';
+  constructor(private router: Router) {}
+  get isLoginPage(): boolean {
+    return this.router.url === '/login';
+  }
 }
