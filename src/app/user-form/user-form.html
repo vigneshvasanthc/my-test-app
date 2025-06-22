@@ -1,8 +1,31 @@
 <div class="user-form-container">
-  <mat-form-field>
-    <mat-label>Input</mat-label>
-    <input matInput [(ngModel)]="userName" />
-  </mat-form-field>
+  <form action="" [formGroup]="userFormGroup">
+    <mat-form-field>
+      <mat-label>Input</mat-label>
+      <input
+        matInput
+        [(ngModel)]="userName"
+        formControlName="addUser"
+        [disabled]="userFormGroup.invalid"
+      />
+    </mat-form-field>
 
-  <h1>{{userName}}</h1>
+    <button class="btn btn-primary" type="button" (click)="add()">
+      <mat-icon>{{isEditing? 'edit': 'add'}}</mat-icon>
+      {{isEditing ? 'Update': 'Save'}}
+    </button>
+  </form>
+  @for(nameList of userNameList; track i; let i = $index;) {
+  <h1>
+    {{i + 1}}. {{nameList}}
+
+    <button type="button" class="btn btn-secondary" (click)="edit(i)">
+      <mat-icon class="material-symbols-outlined">colorize</mat-icon>
+    </button>
+
+    <button type="button" class="btn btn-secondary" (click)="delete(i)">
+      <mat-icon class="material-symbols-outlined">delete</mat-icon>
+    </button>
+  </h1>
+  }
 </div>
